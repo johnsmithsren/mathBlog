@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "d8972fe5e04b7fc7",
+    "type": "split",
+    "children": [
+      {
+        "id": "af7b25c692d3c9a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d80b306c6d90675",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "【及格宝典】00_近五年数二真题考点雷达与及格必拿清单.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "【及格宝典】00_近五年数二真题考点雷达与及格必拿清单"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2226e5e801f6b465",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e16d0d348d451d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "010be55db4254f9b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "a15fd545eaa9d739",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "b4c20286e72ef225",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5f2dbc5e6156f0d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a4116027fddb222",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "969c62fd0a017ac7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "【及格宝典】02_高数三大计算大题必拿30分.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "c28f40b4ef079d98",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "【及格宝典】02_高数三大计算大题必拿30分.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "76dfb071cc127e6c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "a9f62ddaab90ccb2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "20bc7432fd887730",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "【及格宝典】02_高数三大计算大题必拿30分.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "6d80b306c6d90675",
+  "lastOpenFiles": [
+    "README.md",
+    "矩阵乘积为零与秩不等式夹逼秒杀题.md",
+    "【真题专项】08_线代选填通关矩阵方程与代数余子式秒杀.md",
+    "【真题专项】07_多元函数条件极值与几何建模必刷题.md",
+    "【真题专项】06_数二专属定积分物理应用与曲率考场必刷题.md",
+    "考研数学二_70分及格线题库查漏补缺攻坚清单.md",
+    "【及格宝典】05_高数与线代高频必背公式与20大易错坑点手册.md",
+    "【及格宝典】01_线性代数保底25分机械化解题.md",
+    "【及格宝典】00_近五年数二真题考点雷达与及格必拿清单.md",
+    "导出全部为PDF.bat",
+    "export_pdf.js",
+    "考研数学二_完整通关宝典与题库全集.pdf",
+    "考研数学二_完整通关宝典与题库全集.html",
+    "test_output.pdf",
+    "test_pdf.html",
+    "【真题专项】05_高数核心中值定理与存在性定理全景速查与拿分模板.html",
+    "【真题专项】05_高数核心中值定理与存在性定理全景速查与拿分模板.md",
+    "【真题专项】04_分部积分法在不定积分与定积分中的全应用与考场秒杀.html",
+    "【真题专项】04_分部积分法在不定积分与定积分中的全应用与考场秒杀.md",
+    "【真题专项】03_数二客观题全真模拟与送分必刷16题（选择10题+填空6题）.html",
+    "【真题专项】03_数二客观题全真模拟与送分必刷16题（选择10题+填空6题）.md",
+    "【及格题库】12_极值与渐近线专题强化15题与深度拆解.html",
+    "【及格题库】12_极值与渐近线专题强化15题与深度拆解.md",
+    "【及格宝典】03_客观题高频送分点与秒杀技巧.md",
+    "【及格宝典】04_考场抢分避坑与战略舍得纪律.md",
+    "【及格宝典】06_客观题特值排除与反例秒杀专项.md",
+    "【及格题库】01_未定型极限必刷15题与详细解析.md",
+    "【及格题库】02_二重积分计算必刷15题与详细解析.md",
+    "【及格题库】03_常微分方程必刷15题与详细解析.md",
+    "【及格题库】07_多元函数偏导全微分与极值必刷15题与详细解析.md",
+    "【真题专项】02_伴随矩阵初等变换与特征值真题同款必刷.md",
+    "【真题专项】01_变限积分拆项求导极限与性态真题同款必刷.md",
+    "【及格题库】11_一元与多元最值极值及优化应用必刷15题与详细解析.md",
+    "【及格题库】06_客观题高频送分必刷15题与详细解析.md",
+    "【及格题库】08_定积分几何应用与旋转体体积必刷15题与详细解析.md",
+    "【及格宝典】02_高数三大计算大题必拿30分.md"
+  ]
+}
