@@ -7,7 +7,10 @@ function renderMarkdownToHtml(mdContent, title = '考研数学笔记', allFiles 
     const mathStore = [];
     function saveMath(math, isBlock) {
         const id = mathStore.length;
-        mathStore.push({ math, isBlock });
+        const cleaned = String(math)
+            .replace(/^[ \t]*>[ \t]?/gm, '')
+            .replace(/<\/end\{/g, '\\end{');
+        mathStore.push({ math: cleaned, isBlock });
         return isBlock ? `\n\n%%MATH_BLOCK_${id}%%\n\n` : `%%MATH_INLINE_${id}%%`;
     }
 
@@ -41,12 +44,17 @@ function renderMarkdownToHtml(mdContent, title = '考研数学笔记', allFiles 
         }
     }
 
-    // 4. marked 转换
+    // 4. marked 转换（先保护单个 ~，避免 2021~2025 被 GFM 收成删除线）
+    const TILDE_TOKEN = '%%TILDE%%';
+    text = text.replace(/~/g, TILDE_TOKEN);
     marked.setOptions({
         gfm: true,
         breaks: false
     });
     let html = marked.parse(text);
+    html = html.replace(new RegExp(TILDE_TOKEN, 'g'), '~');
+    html = html.replace(/href="(\.\/[^"]+)\.md"/g, 'href="$1.html"');
+    html = html.replace(/>([^<]+)\.md<\/a>/g, '>$1</a>');
 
     // 5. 还原公式并由 KaTeX 渲染
     html = html.replace(/%%MATH_(BLOCK|INLINE)_(\d+)%%/g, (m, type, id) => {
@@ -76,22 +84,58 @@ function renderMarkdownToHtml(mdContent, title = '考研数学笔记', allFiles 
         return `<a href="#${item.slug}" class="toc-item ${indentClass}">${escapeHtml(item.text)}</a>`;
     }).join('\n');
 
-    // 8. 生成多章节切换列表
-    const chaptersHtml = allFiles.length > 1 ? `
-        <div class="sidebar-section-title">📑 笔记章节</div>
-        <div class="toc-list" style="border-bottom: 1px solid var(--sidebar-border); margin-bottom: 12px; padding-bottom: 12px;">
-            ${allFiles.map(f => {
-                const isActive = f.title === title;
-                return `<a href="./${encodeURIComponent(f.htmlName)}" class="toc-item ${isActive ? 'active-chapter' : ''}" style="${isActive ? 'font-weight: 700; color: var(--primary-color); background: var(--quote-bg);' : ''}">📄 ${escapeHtml(f.title)}</a>`;
-            }).join('\n')}
-        </div>
-    ` : '';
+    // 8. 按系列分组的章节列表
+    const chaptersHtml = allFiles.length > 1 ? buildChaptersHtml(allFiles, title) : '';
 
     return generateFullHtmlPage(title, html, tocHtml, chaptersHtml);
 }
 
 function escapeHtml(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function chapterSortKey(filename) {
+    const numbered = filename.match(/】(\d+)/);
+    if (numbered) return parseInt(numbered[1], 10);
+    return 1000;
+}
+
+function shortChapterTitle(file) {
+    if (file.filename === 'README.md') return '总目录（首页）';
+    return file.title
+        .replace(/^【及格宝典】/, '')
+        .replace(/^【及格题库】/, '')
+        .replace(/^【真题专项】/, '');
+}
+
+function buildChaptersHtml(allFiles, currentTitle) {
+    const groups = [
+        { title: '🏠 首页', pred: (f) => f.filename === 'README.md' },
+        { title: '🛡️ 及格宝典', pred: (f) => f.filename.includes('【及格宝典】') },
+        { title: '🎯 及格题库', pred: (f) => f.filename.includes('【及格题库】') },
+        { title: '🔥 真题专项', pred: (f) => f.filename.includes('【真题专项】') },
+        {
+            title: '📖 核心理论与清单',
+            pred: (f) =>
+                f.filename !== 'README.md' &&
+                !f.filename.includes('【及格宝典】') &&
+                !f.filename.includes('【及格题库】') &&
+                !f.filename.includes('【真题专项】')
+        }
+    ];
+
+    return groups.map((group) => {
+        const items = allFiles
+            .filter(group.pred)
+            .sort((a, b) => chapterSortKey(a.filename) - chapterSortKey(b.filename) || a.filename.localeCompare(b.filename, 'zh'));
+        if (!items.length) return '';
+        const links = items.map((f) => {
+            const isActive = f.title === currentTitle;
+            const href = f.filename === 'README.md' ? './index.html' : `./${encodeURIComponent(f.htmlName)}`;
+            return `<a href="${href}" class="toc-item${isActive ? ' active-chapter' : ''}">${escapeHtml(shortChapterTitle(f))}</a>`;
+        }).join('\n');
+        return `<div class="sidebar-section-title">${group.title}</div>\n<div class="toc-list chapter-group">${links}</div>`;
+    }).join('\n');
 }
 
 function generateFullHtmlPage(title, contentHtml, tocHtml, chaptersHtml = '') {
@@ -239,6 +283,24 @@ function generateFullHtmlPage(title, contentHtml, tocHtml, chaptersHtml = '') {
         .toc-level-1 { font-weight: 700; font-size: 0.92rem; margin-top: 6px; }
         .toc-level-2 { padding-left: 18px; font-size: 0.86rem; }
         .toc-level-3 { padding-left: 30px; font-size: 0.8rem; opacity: 0.75; }
+
+        .chapter-group {
+            border-bottom: 1px solid var(--sidebar-border);
+            margin-bottom: 4px;
+            padding-bottom: 8px;
+        }
+
+        .toc-item.active-chapter {
+            font-weight: 700;
+            color: var(--primary-color);
+            background: var(--quote-bg);
+            opacity: 1;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
 
         /* 主体内容区 */
         #main {
@@ -464,7 +526,7 @@ function generateFullHtmlPage(title, contentHtml, tocHtml, chaptersHtml = '') {
 <body>
     <div id="sidebar">
         <div class="sidebar-header">
-            <span>📚 考研数学复习系统</span>
+            <a class="home-link" href="./index.html">📚 考研数学复习系统</a>
             <button class="btn" style="padding: 2px 6px; font-size: 0.75rem;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">回顶部</button>
         </div>
         ${chaptersHtml}
@@ -537,7 +599,7 @@ function main() {
 
     const fileMetaList = files.map(f => ({
         filename: f,
-        title: f.replace(/\.md$/, ''),
+        title: f === 'README.md' ? '考研数学复习系统 · 总目录' : f.replace(/\.md$/, ''),
         htmlName: f.replace(/\.md$/, '.html')
     }));
 
@@ -551,11 +613,10 @@ function main() {
         console.log(`成功生成: ${htmlPath}`);
     }
 
-    // 默认使用 00 总纲清单作为 index.html 方便开箱即开
-    const defaultHome = fileMetaList.find(f => f.htmlName.includes('00')) || fileMetaList.find(f => f.htmlName.includes('01')) || fileMetaList[0];
-    if (defaultHome && fs.existsSync(path.join(cwd, defaultHome.htmlName))) {
-        fs.copyFileSync(path.join(cwd, defaultHome.htmlName), path.join(cwd, 'index.html'));
-        console.log(`已同步首页: index.html -> ${defaultHome.htmlName}`);
+    const homeSource = fileMetaList.find(f => f.filename === 'README.md') || fileMetaList.find(f => f.filename.includes('00')) || fileMetaList[0];
+    if (homeSource && fs.existsSync(path.join(cwd, homeSource.htmlName))) {
+        fs.copyFileSync(path.join(cwd, homeSource.htmlName), path.join(cwd, 'index.html'));
+        console.log(`已同步首页: index.html -> ${homeSource.htmlName}`);
     }
 }
 

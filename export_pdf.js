@@ -14,7 +14,10 @@ function renderMarkdownBody(mdContent, chapterId) {
     const mathStore = [];
     function saveMath(math, isBlock) {
         const id = mathStore.length;
-        mathStore.push({ math, isBlock });
+        const cleaned = String(math)
+            .replace(/^[ \t]*>[ \t]?/gm, '')
+            .replace(/<\/end\{/g, '\\end{');
+        mathStore.push({ math: cleaned, isBlock });
         return isBlock ? `\n\n%%MATH_BLOCK_${chapterId}_${id}%%\n\n` : `%%MATH_INLINE_${chapterId}_${id}%%`;
     }
 
@@ -27,11 +30,14 @@ function renderMarkdownBody(mdContent, chapterId) {
     });
 
     // 3. marked 解析
+    const TILDE_TOKEN = '%%TILDE%%';
+    text = text.replace(/~/g, TILDE_TOKEN);
     marked.setOptions({
         gfm: true,
         breaks: false
     });
     let html = marked.parse(text);
+    html = html.replace(new RegExp(TILDE_TOKEN, 'g'), '~');
 
     // 4. 还原公式由 KaTeX 渲染
     html = html.replace(new RegExp(`%%MATH_(BLOCK|INLINE)_${chapterId}_(\\d+)%%`, 'g'), (m, type, id) => {

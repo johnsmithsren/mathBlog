@@ -10,7 +10,7 @@ if not exist "index.html" (
     node build.js
 )
 
-echo [OK] 正在使用默认浏览器打开及格宝典...
+echo [OK] 正在使用默认浏览器打开总目录...
 start "" "index.html"
 
 exit

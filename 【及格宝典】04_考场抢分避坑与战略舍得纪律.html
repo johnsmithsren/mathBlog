@@ -143,6 +143,24 @@
         .toc-level-2 { padding-left: 18px; font-size: 0.86rem; }
         .toc-level-3 { padding-left: 30px; font-size: 0.8rem; opacity: 0.75; }
 
+        .chapter-group {
+            border-bottom: 1px solid var(--sidebar-border);
+            margin-bottom: 4px;
+            padding-bottom: 8px;
+        }
+
+        .toc-item.active-chapter {
+            font-weight: 700;
+            color: var(--primary-color);
+            background: var(--quote-bg);
+            opacity: 1;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
         /* 主体内容区 */
         #main {
             flex: 1;
@@ -367,38 +385,53 @@
 <body>
     <div id="sidebar">
         <div class="sidebar-header">
-            <span>📚 考研数学复习系统</span>
+            <a class="home-link" href="./index.html">📚 考研数学复习系统</a>
             <button class="btn" style="padding: 2px 6px; font-size: 0.75rem;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">回顶部</button>
         </div>
-        
-        <div class="sidebar-section-title">📑 笔记章节</div>
-        <div class="toc-list" style="border-bottom: 1px solid var(--sidebar-border); margin-bottom: 12px; padding-bottom: 12px;">
-            <a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9100_%E8%BF%91%E4%BA%94%E5%B9%B4%E6%95%B0%E4%BA%8C%E7%9C%9F%E9%A2%98%E8%80%83%E7%82%B9%E9%9B%B7%E8%BE%BE%E4%B8%8E%E5%8F%8A%E6%A0%BC%E5%BF%85%E6%8B%BF%E6%B8%85%E5%8D%95.html" class="toc-item " style="">📄 【及格宝典】00_近五年数二真题考点雷达与及格必拿清单</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9101_%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BF%9D%E5%BA%9525%E5%88%86%E6%9C%BA%E6%A2%B0%E5%8C%96%E8%A7%A3%E9%A2%98.html" class="toc-item " style="">📄 【及格宝典】01_线性代数保底25分机械化解题</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9102_%E9%AB%98%E6%95%B0%E4%B8%89%E5%A4%A7%E8%AE%A1%E7%AE%97%E5%A4%A7%E9%A2%98%E5%BF%85%E6%8B%BF30%E5%88%86.html" class="toc-item " style="">📄 【及格宝典】02_高数三大计算大题必拿30分</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9103_%E5%AE%A2%E8%A7%82%E9%A2%98%E9%AB%98%E9%A2%91%E9%80%81%E5%88%86%E7%82%B9%E4%B8%8E%E7%A7%92%E6%9D%80%E6%8A%80%E5%B7%A7.html" class="toc-item " style="">📄 【及格宝典】03_客观题高频送分点与秒杀技巧</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9104_%E8%80%83%E5%9C%BA%E6%8A%A2%E5%88%86%E9%81%BF%E5%9D%91%E4%B8%8E%E6%88%98%E7%95%A5%E8%88%8D%E5%BE%97%E7%BA%AA%E5%BE%8B.html" class="toc-item active-chapter" style="font-weight: 700; color: var(--primary-color); background: var(--quote-bg);">📄 【及格宝典】04_考场抢分避坑与战略舍得纪律</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9105_%E9%AB%98%E6%95%B0%E4%B8%8E%E7%BA%BF%E4%BB%A3%E9%AB%98%E9%A2%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E4%B8%8E20%E5%A4%A7%E6%98%93%E9%94%99%E5%9D%91%E7%82%B9%E6%89%8B%E5%86%8C.html" class="toc-item " style="">📄 【及格宝典】05_高数与线代高频必背公式与20大易错坑点手册</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9106_%E5%AE%A2%E8%A7%82%E9%A2%98%E7%89%B9%E5%80%BC%E6%8E%92%E9%99%A4%E4%B8%8E%E5%8F%8D%E4%BE%8B%E7%A7%92%E6%9D%80%E4%B8%93%E9%A1%B9.html" class="toc-item " style="">📄 【及格宝典】06_客观题特值排除与反例秒杀专项</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9101_%E6%9C%AA%E5%AE%9A%E5%9E%8B%E6%9E%81%E9%99%90%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】01_未定型极限必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9102_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E8%AE%A1%E7%AE%97%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】02_二重积分计算必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9103_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】03_常微分方程必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9104_%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】04_线性方程组必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9105_%E5%AE%9E%E5%AF%B9%E7%A7%B0%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】05_实对称阵对角化必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9106_%E5%AE%A2%E8%A7%82%E9%A2%98%E9%AB%98%E9%A2%91%E9%80%81%E5%88%86%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】06_客观题高频送分必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9107_%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%AF%BC%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8E%E6%9E%81%E5%80%BC%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】07_多元函数偏导全微分与极值必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9108_%E5%AE%9A%E7%A7%AF%E5%88%86%E5%87%A0%E4%BD%95%E5%BA%94%E7%94%A8%E4%B8%8E%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】08_定积分几何应用与旋转体体积必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9109_%E5%AF%BC%E6%95%B0%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%AF%BC%E7%82%B9%E5%88%A4%E5%AE%9A%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】09_导数定义与不可导点判定必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9110_%E9%A9%BB%E7%82%B9%E6%9E%81%E5%80%BC%E7%82%B9%E6%8B%90%E7%82%B9%E4%B8%8E%E6%B8%90%E8%BF%91%E7%BA%BF%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】10_驻点极值点拐点与渐近线必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9111_%E4%B8%80%E5%85%83%E4%B8%8E%E5%A4%9A%E5%85%83%E6%9C%80%E5%80%BC%E6%9E%81%E5%80%BC%E5%8F%8A%E4%BC%98%E5%8C%96%E5%BA%94%E7%94%A8%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item " style="">📄 【及格题库】11_一元与多元最值极值及优化应用必刷15题与详细解析</a>
-<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9112_%E6%9E%81%E5%80%BC%E4%B8%8E%E6%B8%90%E8%BF%91%E7%BA%BF%E4%B8%93%E9%A2%98%E5%BC%BA%E5%8C%9615%E9%A2%98%E4%B8%8E%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.html" class="toc-item " style="">📄 【及格题库】12_极值与渐近线专题强化15题与深度拆解</a>
-<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9101_%E5%8F%98%E9%99%90%E7%A7%AF%E5%88%86%E6%8B%86%E9%A1%B9%E6%B1%82%E5%AF%BC%E6%9E%81%E9%99%90%E4%B8%8E%E6%80%A7%E6%80%81%E7%9C%9F%E9%A2%98%E5%90%8C%E6%AC%BE%E5%BF%85%E5%88%B7.html" class="toc-item " style="">📄 【真题专项】01_变限积分拆项求导极限与性态真题同款必刷</a>
-<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9102_%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%89%B9%E5%BE%81%E5%80%BC%E7%9C%9F%E9%A2%98%E5%90%8C%E6%AC%BE%E5%BF%85%E5%88%B7.html" class="toc-item " style="">📄 【真题专项】02_伴随矩阵初等变换与特征值真题同款必刷</a>
-<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9103_%E6%95%B0%E4%BA%8C%E5%AE%A2%E8%A7%82%E9%A2%98%E5%85%A8%E7%9C%9F%E6%A8%A1%E6%8B%9F%E4%B8%8E%E9%80%81%E5%88%86%E5%BF%85%E5%88%B716%E9%A2%98%EF%BC%88%E9%80%89%E6%8B%A910%E9%A2%98%2B%E5%A1%AB%E7%A9%BA6%E9%A2%98%EF%BC%89.html" class="toc-item " style="">📄 【真题专项】03_数二客观题全真模拟与送分必刷16题（选择10题+填空6题）</a>
-<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9104_%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%E6%B3%95%E5%9C%A8%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%85%A8%E5%BA%94%E7%94%A8%E4%B8%8E%E8%80%83%E5%9C%BA%E7%A7%92%E6%9D%80.html" class="toc-item " style="">📄 【真题专项】04_分部积分法在不定积分与定积分中的全应用与考场秒杀</a>
-<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9105_%E9%AB%98%E6%95%B0%E6%A0%B8%E5%BF%83%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E4%B8%8E%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86%E5%85%A8%E6%99%AF%E9%80%9F%E6%9F%A5%E4%B8%8E%E6%8B%BF%E5%88%86%E6%A8%A1%E6%9D%BF.html" class="toc-item " style="">📄 【真题专项】05_高数核心中值定理与存在性定理全景速查与拿分模板</a>
-        </div>
-    
+        <div class="sidebar-section-title">🏠 首页</div>
+<div class="toc-list chapter-group"><a href="./index.html" class="toc-item">总目录（首页）</a></div>
+<div class="sidebar-section-title">🛡️ 及格宝典</div>
+<div class="toc-list chapter-group"><a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9100_%E8%BF%91%E4%BA%94%E5%B9%B4%E6%95%B0%E4%BA%8C%E7%9C%9F%E9%A2%98%E8%80%83%E7%82%B9%E9%9B%B7%E8%BE%BE%E4%B8%8E%E5%8F%8A%E6%A0%BC%E5%BF%85%E6%8B%BF%E6%B8%85%E5%8D%95.html" class="toc-item">00_近五年数二真题考点雷达与及格必拿清单</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9101_%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BF%9D%E5%BA%9525%E5%88%86%E6%9C%BA%E6%A2%B0%E5%8C%96%E8%A7%A3%E9%A2%98.html" class="toc-item">01_线性代数保底25分机械化解题</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9102_%E9%AB%98%E6%95%B0%E4%B8%89%E5%A4%A7%E8%AE%A1%E7%AE%97%E5%A4%A7%E9%A2%98%E5%BF%85%E6%8B%BF30%E5%88%86.html" class="toc-item">02_高数三大计算大题必拿30分</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9103_%E5%AE%A2%E8%A7%82%E9%A2%98%E9%AB%98%E9%A2%91%E9%80%81%E5%88%86%E7%82%B9%E4%B8%8E%E7%A7%92%E6%9D%80%E6%8A%80%E5%B7%A7.html" class="toc-item">03_客观题高频送分点与秒杀技巧</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9104_%E8%80%83%E5%9C%BA%E6%8A%A2%E5%88%86%E9%81%BF%E5%9D%91%E4%B8%8E%E6%88%98%E7%95%A5%E8%88%8D%E5%BE%97%E7%BA%AA%E5%BE%8B.html" class="toc-item active-chapter">04_考场抢分避坑与战略舍得纪律</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9105_%E9%AB%98%E6%95%B0%E4%B8%8E%E7%BA%BF%E4%BB%A3%E9%AB%98%E9%A2%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E4%B8%8E20%E5%A4%A7%E6%98%93%E9%94%99%E5%9D%91%E7%82%B9%E6%89%8B%E5%86%8C.html" class="toc-item">05_高数与线代高频必背公式与20大易错坑点手册</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E5%AE%9D%E5%85%B8%E3%80%9106_%E5%AE%A2%E8%A7%82%E9%A2%98%E7%89%B9%E5%80%BC%E6%8E%92%E9%99%A4%E4%B8%8E%E5%8F%8D%E4%BE%8B%E7%A7%92%E6%9D%80%E4%B8%93%E9%A1%B9.html" class="toc-item">06_客观题特值排除与反例秒杀专项</a></div>
+<div class="sidebar-section-title">🎯 及格题库</div>
+<div class="toc-list chapter-group"><a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9101_%E6%9C%AA%E5%AE%9A%E5%9E%8B%E6%9E%81%E9%99%90%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">01_未定型极限必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9102_%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E8%AE%A1%E7%AE%97%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">02_二重积分计算必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9103_%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">03_常微分方程必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9104_%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">04_线性方程组必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9105_%E5%AE%9E%E5%AF%B9%E7%A7%B0%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">05_实对称阵对角化必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9106_%E5%AE%A2%E8%A7%82%E9%A2%98%E9%AB%98%E9%A2%91%E9%80%81%E5%88%86%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">06_客观题高频送分必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9107_%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%AF%BC%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8E%E6%9E%81%E5%80%BC%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">07_多元函数偏导全微分与极值必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9108_%E5%AE%9A%E7%A7%AF%E5%88%86%E5%87%A0%E4%BD%95%E5%BA%94%E7%94%A8%E4%B8%8E%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BD%93%E7%A7%AF%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">08_定积分几何应用与旋转体体积必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9109_%E5%AF%BC%E6%95%B0%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%AF%BC%E7%82%B9%E5%88%A4%E5%AE%9A%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">09_导数定义与不可导点判定必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9110_%E9%A9%BB%E7%82%B9%E6%9E%81%E5%80%BC%E7%82%B9%E6%8B%90%E7%82%B9%E4%B8%8E%E6%B8%90%E8%BF%91%E7%BA%BF%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">10_驻点极值点拐点与渐近线必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9111_%E4%B8%80%E5%85%83%E4%B8%8E%E5%A4%9A%E5%85%83%E6%9C%80%E5%80%BC%E6%9E%81%E5%80%BC%E5%8F%8A%E4%BC%98%E5%8C%96%E5%BA%94%E7%94%A8%E5%BF%85%E5%88%B715%E9%A2%98%E4%B8%8E%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90.html" class="toc-item">11_一元与多元最值极值及优化应用必刷15题与详细解析</a>
+<a href="./%E3%80%90%E5%8F%8A%E6%A0%BC%E9%A2%98%E5%BA%93%E3%80%9112_%E6%9E%81%E5%80%BC%E4%B8%8E%E6%B8%90%E8%BF%91%E7%BA%BF%E4%B8%93%E9%A2%98%E5%BC%BA%E5%8C%9615%E9%A2%98%E4%B8%8E%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.html" class="toc-item">12_极值与渐近线专题强化15题与深度拆解</a></div>
+<div class="sidebar-section-title">🔥 真题专项</div>
+<div class="toc-list chapter-group"><a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9101_%E5%8F%98%E9%99%90%E7%A7%AF%E5%88%86%E6%8B%86%E9%A1%B9%E6%B1%82%E5%AF%BC%E6%9E%81%E9%99%90%E4%B8%8E%E6%80%A7%E6%80%81%E7%9C%9F%E9%A2%98%E5%90%8C%E6%AC%BE%E5%BF%85%E5%88%B7.html" class="toc-item">01_变限积分拆项求导极限与性态真题同款必刷</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9102_%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%89%B9%E5%BE%81%E5%80%BC%E7%9C%9F%E9%A2%98%E5%90%8C%E6%AC%BE%E5%BF%85%E5%88%B7.html" class="toc-item">02_伴随矩阵初等变换与特征值真题同款必刷</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9103_%E6%95%B0%E4%BA%8C%E5%AE%A2%E8%A7%82%E9%A2%98%E5%85%A8%E7%9C%9F%E6%A8%A1%E6%8B%9F%E4%B8%8E%E9%80%81%E5%88%86%E5%BF%85%E5%88%B716%E9%A2%98%EF%BC%88%E9%80%89%E6%8B%A910%E9%A2%98%2B%E5%A1%AB%E7%A9%BA6%E9%A2%98%EF%BC%89.html" class="toc-item">03_数二客观题全真模拟与送分必刷16题（选择10题+填空6题）</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9104_%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%E6%B3%95%E5%9C%A8%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%8E%E5%AE%9A%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%85%A8%E5%BA%94%E7%94%A8%E4%B8%8E%E8%80%83%E5%9C%BA%E7%A7%92%E6%9D%80.html" class="toc-item">04_分部积分法在不定积分与定积分中的全应用与考场秒杀</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9105_%E9%AB%98%E6%95%B0%E6%A0%B8%E5%BF%83%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E4%B8%8E%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86%E5%85%A8%E6%99%AF%E9%80%9F%E6%9F%A5%E4%B8%8E%E6%8B%BF%E5%88%86%E6%A8%A1%E6%9D%BF.html" class="toc-item">05_高数核心中值定理与存在性定理全景速查与拿分模板</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9106_%E6%95%B0%E4%BA%8C%E4%B8%93%E5%B1%9E%E5%AE%9A%E7%A7%AF%E5%88%86%E7%89%A9%E7%90%86%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%B2%E7%8E%87%E8%80%83%E5%9C%BA%E5%BF%85%E5%88%B7%E9%A2%98.html" class="toc-item">06_数二专属定积分物理应用与曲率考场必刷题</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9107_%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E6%9D%A1%E4%BB%B6%E6%9E%81%E5%80%BC%E4%B8%8E%E5%87%A0%E4%BD%95%E5%BB%BA%E6%A8%A1%E5%BF%85%E5%88%B7%E9%A2%98.html" class="toc-item">07_多元函数条件极值与几何建模必刷题</a>
+<a href="./%E3%80%90%E7%9C%9F%E9%A2%98%E4%B8%93%E9%A1%B9%E3%80%9108_%E7%BA%BF%E4%BB%A3%E9%80%89%E5%A1%AB%E9%80%9A%E5%85%B3%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B%E4%B8%8E%E4%BB%A3%E6%95%B0%E4%BD%99%E5%AD%90%E5%BC%8F%E7%A7%92%E6%9D%80.html" class="toc-item">08_线代选填通关矩阵方程与代数余子式秒杀</a></div>
+<div class="sidebar-section-title">📖 核心理论与清单</div>
+<div class="toc-list chapter-group"><a href="./%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%80%A7%E8%B4%A8%E7%B2%BE%E8%AE%B2.html" class="toc-item">伴随矩阵定义与核心性质精讲</a>
+<a href="./%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%88%97%E5%8F%98%E6%8D%A2%E7%9A%84%E9%80%82%E7%94%A8%E8%BE%B9%E7%95%8C%E5%85%A8%E6%99%AF%E6%8C%87%E5%8D%97.html" class="toc-item">初等行变换与列变换的适用边界全景指南</a>
+<a href="./%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%A7%84%E8%8C%83%E5%BD%A2%E6%83%AF%E6%80%A7%E6%8C%87%E6%95%B0%E8%A7%A3%E6%9E%90.html" class="toc-item">二次型的矩阵表示与规范形惯性指数解析</a>
+<a href="./%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E4%B8%BA%E9%9B%B6%E4%B8%8E%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%A4%B9%E9%80%BC%E7%A7%92%E6%9D%80%E9%A2%98.html" class="toc-item">矩阵乘积为零与秩不等式夹逼秒杀题</a>
+<a href="./%E7%9F%A9%E9%98%B5%E5%90%88%E5%90%8C%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%B1%82%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5C%E9%80%9A%E6%B3%95.html" class="toc-item">矩阵合同的定义与求可逆矩阵C通法</a>
+<a href="./%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC%E6%8E%A8%E5%AF%BC%E4%B8%8E%E5%88%97%E6%8B%BC%E8%A3%85%E6%B3%95%E8%A7%A3%E6%9E%90.html" class="toc-item">矩阵相似推导与列拼装法解析</a>
+<a href="./%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E4%BA%8C_70%E5%88%86%E5%8F%8A%E6%A0%BC%E7%BA%BF%E9%A2%98%E5%BA%93%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%E6%94%BB%E5%9D%9A%E6%B8%85%E5%8D%95.html" class="toc-item">考研数学二_70分及格线题库查漏补缺攻坚清单</a>
+<a href="./%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%844%E5%A4%A7%E6%B1%82%E6%B3%95%E4%B8%8E%E8%80%83%E5%9C%BA%E9%81%BF%E5%9D%91%E5%85%A8%E6%99%AF%E6%8C%87%E5%8D%97.html" class="toc-item">逆矩阵的4大求法与考场避坑全景指南</a>
+<a href="./%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E6%AD%A3%E4%BA%A4%E6%80%A7%E4%B8%8E%E5%85%B8%E5%9E%8B%E4%BE%8B%E9%A2%98%E8%A7%A3%E6%9E%90.html" class="toc-item">实对称矩阵特征向量正交性与典型例题解析</a>
+<a href="./%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84_%E9%BD%90%E6%AC%A1%E9%9D%9E%E9%BD%90%E6%AC%A1%E9%80%9A%E8%A7%A3%E7%89%B9%E8%A7%A3%E6%A6%82%E5%BF%B5%E6%95%B4%E7%90%86.html" class="toc-item">线性方程组_齐次非齐次通解特解概念整理</a>
+<a href="./%E5%90%91%E9%87%8F%E7%BB%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7_%E4%B8%AA%E6%95%B0%E4%B8%8E%E7%BB%B4%E6%95%B0%E4%B8%A4%E5%A4%A7%E5%8F%A3%E8%AF%80%E7%B2%BE%E8%AE%B2.html" class="toc-item">向量组线性相关性_个数与维数两大口诀精讲</a></div>
         <div class="sidebar-section-title">📌 当前小节导航</div>
         <div class="toc-list">
             <a href="#heading-0" class="toc-item toc-level-1">【及格宝典】04_考场抢分避坑与战略舍得纪律</a>
@@ -440,29 +473,29 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>0 ~ 65 分钟</strong></td>
+<td align="left"><strong>0—65 分钟</strong></td>
 <td align="left"><strong>攻克 16 道客观题（选填）</strong></td>
-<td align="left">- 平均每题 4 分钟；<br>- 卡壳超过 <strong>3 分钟</strong>的题目立刻打问号，先蒙一个标记好跳过，绝不纠缠！<br>- 目标：拿下 45~50 分。</td>
+<td align="left">- 平均每题约 4 分钟；<br>- 卡壳超过 <strong>3 分钟</strong>立刻打问号，先蒙一个标记好跳过，绝不纠缠！<br>- 目标：拿下 45—50 分。</td>
 </tr>
 <tr>
-<td align="left"><strong>65 ~ 140 分钟</strong></td>
-<td align="left"><strong>攻克 4 道纯计算套路大题</strong><br>（二重积分、微分方程、线代两道大题）</td>
-<td align="left">- <strong>全场黄金 75 分钟</strong>！<br>- 在草稿纸上每一步都算清楚，写进答题卡字迹工整；<br>- 目标：拿下 35~40 分。</td>
+<td align="left"><strong>65—140 分钟</strong></td>
+<td align="left"><strong>攻克计算套路大题</strong><br>（极限、积分应用/多元、二重积分、微分方程、<strong>线代两道</strong>）</td>
+<td align="left">- <strong>全场黄金时间</strong>，第 21、22 题通常就是线代，必须拿满；<br>- 草稿纸上每一步算清楚，答题卡字迹工整；<br>- 目标：拿下 40 分左右。</td>
 </tr>
 <tr>
-<td align="left"><strong>140 ~ 165 分钟</strong></td>
-<td align="left"><strong>压轴大题“合法蹭分”</strong><br>（中值定理证明题、综合应用题）</td>
-<td align="left">- 坚决不奢求做全对！<br>- 按下面介绍的“蹭分模板”，把定理公式默写上去，每题蹭 3<del>4 分；<br>- 目标：白捡 6</del>8 分。</td>
+<td align="left"><strong>140—165 分钟</strong></td>
+<td align="left"><strong>若有证明题再“合法蹭分”</strong><br>（中值定理、不等式；没有证明则检查线代）</td>
+<td align="left">- 证明题坚决不奢求做全对；<br>- 按下节模板写条件 + 辅助函数，蹭 3—4 分；<br>- 没有证明题就把时间还给第 21、22 题。</td>
 </tr>
 <tr>
-<td align="left"><strong>165 ~ 180 分钟</strong></td>
+<td align="left"><strong>165—180 分钟</strong></td>
 <td align="left"><strong>最后 15 分钟全面核查</strong></td>
-<td align="left">- 检查答题卡填涂；<br>- 检查第一道极限题和二重积分的正负号、计算结果；<br>- 回顾前面跳过的选填题，用特值法猜一个最可能的答案。</td>
+<td align="left">- 检查答题卡填涂；<br>- 检查极限、二重积分和线代特征多项式的符号；<br>- 回顾跳过的选填题，用特值法猜一个最可能的答案。</td>
 </tr>
 </tbody></table>
 <hr>
 <h2 id="heading-2">二、 压轴证明题“合法蹭分”三大模版 <a class="header-anchor" href="#heading-2" title="直达此小节">#</a></h2>
-<p>考场遇到中值定理证明题（通常 10<del>12 分），<strong>绝不要在草稿纸上死想证明思路超过 5 分钟</strong>！直接写以下套话，考官按踩分点至少给你 **3</del>4 分**：</p>
+<p>考场遇到中值定理证明题（可能出现在高数大题，<strong>不要默认它是第 21 题</strong>），<strong>绝不要在草稿纸上死想证明思路超过 5 分钟</strong>！直接写以下套话，按踩分点至少能拿到 <strong>3—4 分</strong>：</p>
 <h3 id="heading-3">模版 1：拉格朗日中值定理蹭分 <a class="header-anchor" href="#heading-3" title="直达此小节">#</a></h3>
 <p>无论题目的结论多复杂，只要看到闭区间可导：</p>
 <blockquote>
